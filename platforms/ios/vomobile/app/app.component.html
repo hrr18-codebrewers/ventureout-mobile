@@ -1,19 +1,13 @@
 <StackLayout>
 
   <DockLayout>
-    <Label class="title" text="Venture Out"></Label>
+    <StackLayout>
+      <Label class="title" text="Venture Out"></Label>
+      <Button [nsRouterLink]="['/']" routerLinkActive="active" text="Home"></Button>
+      <Button [nsRouterLink]="['/search-results']" routerLinkActive="active" text="Search Results"></Button>
+    </StackLayout>
   </DockLayout>
 
-  <StackLayout>
-
-    <TextField hint="Interests"></TextField>
-    <TextField hint="Start Date YYYY-MM-DD"></TextField>
-    <TextField hint="End Date YYYY-MM-DD"></TextField>
-    <TextField hint="Budget"></TextField>
-    <TextField hint="Location"></TextField>
-    <Button text="Find Events!"></Button>
-
-  </StackLayout>
+  <router-outlet></router-outlet>
 
 </StackLayout>
-
