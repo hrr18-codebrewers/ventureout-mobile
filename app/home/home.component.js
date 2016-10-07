@@ -6,12 +6,12 @@ var HomeComponent = (function () {
         this.router = router;
     }
     HomeComponent.prototype.onTap = function () {
-        console.log("You tapped that!");
+        alert("You tapped that! " + this.interests + ' ' + this.start + ' ' + this.end + ' ' + this.budget + ' ' + this.location);
     };
     HomeComponent = __decorate([
         core_1.Component({
             selector: "home-page",
-            templateUrl: "./home/home.component.html",
+            templateUrl: "./home/home.component.html"
         }), 
         __metadata('design:paramtypes', [router_1.Router])
     ], HomeComponent);
