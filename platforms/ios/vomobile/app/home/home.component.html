@@ -2,11 +2,11 @@
 
   <StackLayout>
 
-    <TextField hint="Interests"></TextField>
-    <TextField hint="Start Date YYYY-MM-DD"></TextField>
-    <TextField hint="End Date YYYY-MM-DD"></TextField>
-    <TextField hint="Budget"></TextField>
-    <TextField hint="Location"></TextField>
+    <TextField hint="Interests" [(ngModel)]="interests"></TextField>
+    <TextField hint="Start Date YYYY-MM-DD" [(ngModel)]="start"></TextField>
+    <TextField hint="End Date YYYY-MM-DD" [(ngModel)]="end"></TextField>
+    <TextField hint="Budget" [(ngModel)]="budget"></TextField>
+    <TextField hint="Location" [(ngModel)]="location"></TextField>
     <Button text="Find Events!" (tap)="onTap()"></Button>
 
   </StackLayout>

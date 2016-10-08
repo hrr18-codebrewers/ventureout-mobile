@@ -1,12 +1,12 @@
 ﻿@import { url('~/platform.css') };
 
-label, stack-layout {
-    horizontal-align: center;
-}
+
 
 .title {
     font-size: 30;
-    margin: 20;
+    margin: 10;
+    color: white;
+    horizontal-align: center;
 }
 
 text-field {
@@ -17,7 +17,7 @@ text-field {
 }
 
 dock-layout {
-  background-color: #9c27b0;
+  background-color: #223947;
   width: 100%;
 }
 

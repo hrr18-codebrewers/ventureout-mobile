@@ -1,12 +1,14 @@
 import { Component } from "@angular/core";
-import { Router } from "@angular/router";
 
 @Component({
     selector: "my-app",
     templateUrl: "app.component.html",
 })
 export class AppComponent {
+
+    items = [1,2,3,4];
+
     public onTap() {
-        console.log("You tapped that!");
+        alert("You tapped that!");
     }
 }
