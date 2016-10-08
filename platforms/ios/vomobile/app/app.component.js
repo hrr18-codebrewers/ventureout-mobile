@@ -2,9 +2,10 @@
 var core_1 = require("@angular/core");
 var AppComponent = (function () {
     function AppComponent() {
+        this.items = [1, 2, 3, 4];
     }
     AppComponent.prototype.onTap = function () {
-        console.log("You tapped that!");
+        alert("You tapped that!");
     };
     AppComponent = __decorate([
         core_1.Component({

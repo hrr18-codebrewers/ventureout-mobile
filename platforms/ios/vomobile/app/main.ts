@@ -6,6 +6,7 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { AppComponent } from "./app.component";
 import { HomeComponent } from "./home/home.component";
 import { SearchResultsComponent } from "./search-results/search-results.component";
+import { SearchService } from "./home/search.service"
 
 @NgModule({
     declarations: [AppComponent,
@@ -20,6 +21,7 @@ import { SearchResultsComponent } from "./search-results/search-results.componen
                 { path: 'search-results', component: SearchResultsComponent}
 
               ])],
+    providers: [SearchService]
 })
 class AppComponentModule {}
 

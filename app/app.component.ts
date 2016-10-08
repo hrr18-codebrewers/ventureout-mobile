@@ -5,7 +5,10 @@ import { Component } from "@angular/core";
     templateUrl: "app.component.html",
 })
 export class AppComponent {
+
+    items = [1,2,3,4];
+
     public onTap() {
-        console.log("You tapped that!");
+        alert("You tapped that!");
     }
 }

@@ -7,6 +7,7 @@ var forms_1 = require("nativescript-angular/forms");
 var app_component_1 = require("./app.component");
 var home_component_1 = require("./home/home.component");
 var search_results_component_1 = require("./search-results/search-results.component");
+var search_service_1 = require("./home/search.service");
 var AppComponentModule = (function () {
     function AppComponentModule() {
     }
@@ -23,6 +24,7 @@ var AppComponentModule = (function () {
                     { path: '', component: home_component_1.HomeComponent },
                     { path: 'search-results', component: search_results_component_1.SearchResultsComponent }
                 ])],
+            providers: [search_service_1.SearchService]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponentModule);
