@@ -20,7 +20,13 @@
 }
 
 .dropdown {
+  margin: 10;
+  padding: 10;
   color: blue;
+}
+
+.dropdownLabel {
+  margin: 10;
 }
 
 text-field {

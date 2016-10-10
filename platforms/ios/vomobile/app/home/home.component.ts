@@ -10,7 +10,7 @@ import { SearchService } from "./search.service";
 
 export class HomeComponent {
 
-  selectedIndex = 1;
+  selectedIndex = 0;
 
   categories = ['Business & Professional',
                 'Music',
@@ -33,7 +33,6 @@ export class HomeComponent {
                 'Hobbies & Special Interest',
                 'other'];
 
-  interests: string;
   start: string;
   end: string;
   budget: number;
@@ -46,7 +45,7 @@ export class HomeComponent {
 
   public onTap() {
     var info = {
-      interests: this.interests,
+      interests: this.categories[this.selectedIndex],
       start: this.start,
       end: this.end,
       budget: this.budget,
@@ -56,7 +55,26 @@ export class HomeComponent {
   }
 
   public onchange(selectedIndex){
+    console.log("Before", this.selectedIndex);
+    this.selectedIndex = selectedIndex;
     console.log("Selected", selectedIndex);
+    console.log("After", this.selectedIndex);
   }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

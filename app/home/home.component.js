@@ -6,7 +6,7 @@ var HomeComponent = (function () {
     function HomeComponent(router, searchService) {
         this.router = router;
         this.searchService = searchService;
-        this.selectedIndex = 1;
+        this.selectedIndex = 0;
         this.categories = ['Business & Professional',
             'Music',
             'Food & Drink',
@@ -30,7 +30,7 @@ var HomeComponent = (function () {
     }
     HomeComponent.prototype.onTap = function () {
         var info = {
-            interests: this.interests,
+            interests: this.categories[this.selectedIndex],
             start: this.start,
             end: this.end,
             budget: this.budget,
@@ -39,7 +39,10 @@ var HomeComponent = (function () {
         this.searchService.getEvents(info);
     };
     HomeComponent.prototype.onchange = function (selectedIndex) {
+        console.log("Before", this.selectedIndex);
+        this.selectedIndex = selectedIndex;
         console.log("Selected", selectedIndex);
+        console.log("After", this.selectedIndex);
     };
     HomeComponent = __decorate([
         core_1.Component({
