@@ -1,12 +1,38 @@
-import { Component } from "@angular/core";
+import { Component, OnChanges } from "@angular/core";
 import { Router } from "@angular/router";
+import {ObservableArray} from "data/observable-array";
 import { SearchService } from "./search.service";
 
 @Component({
     selector: "home-page",
     templateUrl: "./home/home.component.html"
 })
+
 export class HomeComponent {
+
+  selectedIndex = 1;
+
+  categories = ['Business & Professional',
+                'Music',
+                'Food & Drink',
+                'Community & Culture',
+                'Performing & Visual Arts',
+                'Film, Media & Entertainment',
+                'Sports & Fitness',
+                'Health & Wellness',
+                'Science & Technology',
+                'Travel & Outdoor',
+                'Charity & Causes',
+                'Religion & Spirituality',
+                'Family & Education',
+                'Seasonal & Holiday',
+                'Government & Politics',
+                'Fashion & Beauty',
+                'Home & Lifestyle',
+                'Auto, Boat & Air',
+                'Hobbies & Special Interest',
+                'other'];
+
   interests: string;
   start: string;
   end: string;
@@ -28,4 +54,9 @@ export class HomeComponent {
     };
     this.searchService.getEvents(info);
   }
+
+  public onchange(selectedIndex){
+    console.log("Selected", selectedIndex);
+  }
+
 }

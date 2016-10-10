@@ -6,11 +6,8 @@ var SearchResultsComponent = (function () {
         this.searchService = searchService;
         this.matches = this.searchService.events.events;
     }
-    SearchResultsComponent.prototype.onTap = function () {
-        alert("You tapped that! " + this.searchService.events.events.length + " events!");
-    };
     SearchResultsComponent.prototype.onItemTap = function (item) {
-        alert("You tapped " + item.index);
+        alert("Find This Event Here: \n" + this.matches[item.index].url);
     };
     SearchResultsComponent = __decorate([
         core_1.Component({

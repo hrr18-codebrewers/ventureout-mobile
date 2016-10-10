@@ -13,11 +13,7 @@ export class SearchResultsComponent {
 
   }
 
-  public onTap() {
-      alert("You tapped that! " + this.searchService.events.events.length + " events!");
-  }
-
   public onItemTap(item) {
-    alert("You tapped " + item.index);
+    alert("Find This Event Here: \n" + this.matches[item.index].url);
   }
 }

@@ -2,11 +2,12 @@
 
   <StackLayout>
 
-    <TextField hint="Interests" [(ngModel)]="interests"></TextField>
-    <TextField hint="Start Date YYYY-MM-DD" [(ngModel)]="start"></TextField>
-    <TextField hint="End Date YYYY-MM-DD" [(ngModel)]="end"></TextField>
+    <Label text="Pick A Category!" fontSize="18" verticalAlignment="bottom"></Label>
+    <DropDown #dd class="dropdown" [items]="categories" [selectedIndex]="selectedIndex" (selectedIndexChange)="onchange(dd.selectedIndex)"></DropDown>
+    <TextField hint="Start Date: YYYY-MM-DD" [(ngModel)]="start"></TextField>
+    <TextField hint="End Date: YYYY-MM-DD" [(ngModel)]="end"></TextField>
     <TextField hint="Budget" [(ngModel)]="budget"></TextField>
-    <TextField hint="Location" [(ngModel)]="location"></TextField>
+    <TextField hint="Location: City, State" [(ngModel)]="location"></TextField>
     <Button text="Find Events!" (tap)="onTap()"></Button>
 
   </StackLayout>
