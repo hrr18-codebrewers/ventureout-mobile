@@ -7,7 +7,10 @@ var SearchResultsComponent = (function () {
         this.matches = this.searchService.events.events;
     }
     SearchResultsComponent.prototype.onTap = function () {
-        alert("You tapped that! " + this.searchService.events.events.length);
+        alert("You tapped that! " + this.searchService.events.events.length + " events!");
+    };
+    SearchResultsComponent.prototype.onItemTap = function (item) {
+        alert("You tapped " + item.index);
     };
     SearchResultsComponent = __decorate([
         core_1.Component({

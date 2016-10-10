@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { SearchService } from "./search.service"
+import { SearchService } from "./search.service";
 
 @Component({
     selector: "home-page",

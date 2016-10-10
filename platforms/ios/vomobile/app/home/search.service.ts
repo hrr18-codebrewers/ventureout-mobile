@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { getJSON, request } from "http";
+import { RouterExtensions } from "nativescript-angular/router";
 
 @Injectable()
 export class SearchService {
   events: any;
 
-  constructor() {
+  constructor(private routerExtensions: RouterExtensions) {
   }
 
   public getEvents(criteria) {
@@ -19,6 +20,7 @@ export class SearchService {
 
       getJSON(url).then(function(response){
         that.events = response;
+        that.routerExtensions.navigate(["/search-results"]);
       }, function(error){
         console.error(error);
       });

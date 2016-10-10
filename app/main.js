@@ -24,7 +24,8 @@ var AppComponentModule = (function () {
                     { path: '', component: home_component_1.HomeComponent },
                     { path: 'search-results', component: search_results_component_1.SearchResultsComponent }
                 ])],
-            providers: [search_service_1.SearchService]
+            providers: [search_service_1.SearchService,
+                router_1.RouterExtensions]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponentModule);

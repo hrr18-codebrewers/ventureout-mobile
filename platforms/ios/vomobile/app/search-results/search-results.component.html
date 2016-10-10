@@ -1,5 +1,9 @@
 <StackLayout>
 
+  <DockLayout>
+    <Button [nsRouterLink]="['/']" routerLinkActive="active" text="Search Again"></Button>
+  </DockLayout>
+
   <StackLayout>
     <Label text="Your Search Results Here!"></Label>
     <Button (tap)="onTap()" text="Test"></Button>
