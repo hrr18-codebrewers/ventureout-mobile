@@ -8,4 +8,4 @@ Then, run this command in your repo directory to start the simulator:
 tns livesync ios --emulator --watch
 
 
-Known error with dropdown, must make a change in nativescript-drop-down module. Remove parentheses on line 32 after mainScreen. Github Issue https://github.com/PeterStaev/NativeScript-Drop-Down/issues/34
+Known error with dropdown, must make a change in nativescript-drop-down module. Remove parentheses on line 32 after mainScreen in drop-down.ios.js file. Github Issue https://github.com/PeterStaev/NativeScript-Drop-Down/issues/34
