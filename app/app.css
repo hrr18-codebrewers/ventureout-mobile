@@ -32,3 +32,11 @@ Image {
     margin-right: 0;
     margin-bottom: 80;
 }
+
+.odd {
+    background-color: red;
+}
+
+.even {
+    background-color: blue;
+}

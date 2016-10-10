@@ -5,6 +5,15 @@
     <Button (tap)="onTap()" text="Test"></Button>
   </StackLayout>
 
+  <ListView [items]="matches" (itemTap)="onItemTap($event)">
+    <template let-item="item" let-i="index" let-odd="odd" let-even="even">
+      <StackLayout [class.odd]="odd" [class.even]="even">
+        <Label [text]='"index: " + i'></Label>
+        <Label [text]='"[" + item.id +"] " + item.name.text'></Label>
+      </StackLayout>
+    </template>
+  </ListView>
+
 </StackLayout>
 
 

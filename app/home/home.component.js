@@ -15,7 +15,6 @@ var HomeComponent = (function () {
             budget: this.budget,
             location: this.location
         };
-        alert("You are searching for " + JSON.stringify(info));
         this.searchService.getEvents(info);
     };
     HomeComponent = __decorate([

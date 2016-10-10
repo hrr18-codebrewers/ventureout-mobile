@@ -3,11 +3,14 @@ var core_1 = require('@angular/core');
 var http_1 = require("http");
 var SearchService = (function () {
     function SearchService() {
-        this.events = [1, 2, 3];
     }
     SearchService.prototype.getEvents = function (criteria) {
-        http_1.getJSON('http://ventureout.ddns.net:1337/api/events').then(function (response) {
-            console.log(response[0]);
+        var that = this;
+        var futureDate = new Date(new Date().getTime() + 1 * 24 * 60 * 60 * 1000).toJSON().slice(0, 10);
+        var startDate = futureDate + 'T00:00:00Z';
+        var url = 'https://www.eventbriteapi.com/v3/events/search/?sort_by=best&location.address=us&start_date.range_start=' + startDate + '&expand=venue&token=YZO3HZ5MJZYKY6QU64H2';
+        http_1.getJSON(url).then(function (response) {
+            that.events = response;
         }, function (error) {
             console.error(error);
         });

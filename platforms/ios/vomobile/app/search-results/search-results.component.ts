@@ -7,11 +7,13 @@ import { SearchService } from "../home/search.service"
 })
 export class SearchResultsComponent {
 
-    constructor(private searchService: SearchService) {
+  matches = this.searchService.events.events;
 
-    }
+  constructor(private searchService: SearchService) {
 
-    public onTap() {
-        alert("You tapped that! " + this.searchService.events);
-    }
+  }
+
+  public onTap() {
+      alert("You tapped that! " + this.searchService.events.events.length);
+  }
 }

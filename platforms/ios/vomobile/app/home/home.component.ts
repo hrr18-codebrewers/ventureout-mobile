@@ -26,7 +26,6 @@ export class HomeComponent {
       budget: this.budget,
       location: this.location
     };
-    alert("You are searching for " + JSON.stringify(info));
     this.searchService.getEvents(info);
   }
 }
