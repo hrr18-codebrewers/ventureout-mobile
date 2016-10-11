@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit } from "@angular/core";
+import { Component, OnChanges } from "@angular/core";
 import { Router } from "@angular/router";
 import {ObservableArray} from "data/observable-array";
 import { SearchService } from "./search.service";
@@ -9,17 +9,12 @@ import { Page } from "ui/page";
     templateUrl: "./home/home.component.html"
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
   constructor(private router: Router,
               private searchService: SearchService,
               private page: Page) {
 
-  }
-
-  ngOnInit() {
-    this.page.actionBarHidden = true;
-    //this.page.backgroundImage = "~/vo-background3.jpeg";
   }
 
   selectedIndex: number = 0;
