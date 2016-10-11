@@ -29,6 +29,14 @@
   margin: 10;
 }
 
+.noImage {
+  horizontal-align: center;
+}
+
+list-view {
+  height: 100%;
+}
+
 text-field {
   font-size: 20;
   width: 100%;

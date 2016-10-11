@@ -11,7 +11,8 @@
   <ListView [items]="matches" (itemTap)="onItemTap($event)">
     <template let-item="item" let-i="index">
       <StackLayout>
-        <Image src='item.logo.original.url' ></Image>
+        <Image *ngIf='item.logo !== null' src='item.logo.original.url'></Image>
+        <Label class="noImage" *ngIf='item.logo === null' text="No Image Available"></Label>
         <Label class="eventTitle" [text]='item.name.text'></Label>
       </StackLayout>
     </template>
