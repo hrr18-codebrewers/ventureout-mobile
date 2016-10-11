@@ -37,13 +37,18 @@ var HomeComponent = (function () {
             'other'];
     }
     HomeComponent.prototype.onTap = function () {
-        console.log("info", this.selectedIndex, this.selectedDateIndex);
         var info = {
             interests: this.categories[this.selectedIndex],
             timeframe: this.timeframes[this.selectedDateIndex],
             budget: this.budget,
             location: this.location
         };
+        for (var key in info) {
+            if (info[key] === undefined) {
+                alert("Please Fill Out All Criteria");
+                return;
+            }
+        }
         console.log("Info", JSON.stringify(info));
         this.searchService.getEvents(info);
     };
