@@ -41,10 +41,6 @@ var HomeComponent = (function () {
             'Hobbies & Special Interest',
             'other'];
     }
-    HomeComponent.prototype.ngOnInit = function () {
-        this.page.actionBarHidden = true;
-        //this.page.backgroundImage = "~/vo-background3.jpeg";
-    };
     HomeComponent.prototype.onTap = function () {
         var info = {
             interests: this.categories[this.selectedIndex],

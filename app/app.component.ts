@@ -6,9 +6,4 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
 
-    items = [1,2,3,4];
-
-    public onTap() {
-        alert("You tapped that!");
-    }
 }

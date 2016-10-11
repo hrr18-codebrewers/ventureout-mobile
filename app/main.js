@@ -1,14 +1,17 @@
 "use strict";
-// this import should be first in order to load some required settings (like globals and reflect-metadata)
+// Structural imports
 var platform_1 = require("nativescript-angular/platform");
-var core_1 = require("@angular/core");
 var router_1 = require("nativescript-angular/router");
 var element_registry_1 = require("nativescript-angular/element-registry");
 var forms_1 = require("nativescript-angular/forms");
+var core_1 = require("@angular/core");
+// Components
 var app_component_1 = require("./app.component");
 var home_component_1 = require("./home/home.component");
 var search_results_component_1 = require("./search-results/search-results.component");
+//Services
 var search_service_1 = require("./home/search.service");
+// Register the dropdown element so that the compiler will recognize it
 element_registry_1.registerElement("DropDown", function () { return require("nativescript-drop-down/drop-down").DropDown; });
 var AppComponentModule = (function () {
     function AppComponentModule() {

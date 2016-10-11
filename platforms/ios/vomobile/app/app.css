@@ -73,13 +73,6 @@ Page {
   background-size: cover;
 }
 
-Image {
-    margin-top: 20;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 80;
-}
-
 .criteria {
   margin-top: 35;
   margin-left: 30;

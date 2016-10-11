@@ -14,8 +14,6 @@ export class SearchResultsComponent {
   }
 
   public onItemTap(item) {
-    var match = this.matches[item.index]
-    console.log("Match-Logo", match.logo);
     alert("Find This Event Here: \n" + this.matches[item.index].url);
   }
 }
