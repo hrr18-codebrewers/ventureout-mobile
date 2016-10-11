@@ -8,6 +8,9 @@ var HomeComponent = (function () {
         this.searchService = searchService;
         this.selectedIndex = 0;
         this.selectedDateIndex = 0;
+        this.selectedSpendingIndex = 0;
+        this.spending = ['Free',
+            'Paid'];
         this.timeframes = ['Today',
             'Tomorrow',
             'This Week',
@@ -40,7 +43,7 @@ var HomeComponent = (function () {
         var info = {
             interests: this.categories[this.selectedIndex],
             timeframe: this.timeframes[this.selectedDateIndex],
-            budget: this.budget,
+            budget: this.spending[this.selectedSpendingIndex],
             location: this.location
         };
         for (var key in info) {
@@ -49,14 +52,16 @@ var HomeComponent = (function () {
                 return;
             }
         }
-        console.log("Info", JSON.stringify(info));
         this.searchService.getEvents(info);
     };
-    HomeComponent.prototype.onchange = function (selectedIndex) {
+    HomeComponent.prototype.onChange = function (selectedIndex) {
         this.selectedIndex = selectedIndex;
     };
     HomeComponent.prototype.onDateChange = function (selectedIndex) {
         this.selectedDateIndex = selectedIndex;
+    };
+    HomeComponent.prototype.onSpendingChange = function (selectedIndex) {
+        this.selectedSpendingIndex = selectedIndex;
     };
     HomeComponent = __decorate([
         core_1.Component({

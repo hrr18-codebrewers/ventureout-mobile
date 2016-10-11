@@ -14,13 +14,18 @@ export class HomeComponent {
 
   selectedDateIndex: number = 0;
 
+  selectedSpendingIndex: number = 0;
+
+  spending = ['Free',
+              'Paid'];
+
   timeframes = ['Today',
                 'Tomorrow',
                 'This Week',
                 'This Weekend',
                 'Next Week',
                 'This Month',
-                'Next Month']
+                'Next Month'];
 
   categories = ['Business & Professional',
                 'Music',
@@ -43,9 +48,6 @@ export class HomeComponent {
                 'Hobbies & Special Interest',
                 'other'];
 
-  start: string;
-  end: string;
-  budget: string;
   location: string;
 
   constructor(private router: Router,
@@ -57,7 +59,7 @@ export class HomeComponent {
     var info = {
       interests: this.categories[this.selectedIndex],
       timeframe: this.timeframes[this.selectedDateIndex],
-      budget: this.budget,
+      budget: this.spending[this.selectedSpendingIndex],
       location: this.location
     };
     for(var key in info){
@@ -66,16 +68,19 @@ export class HomeComponent {
         return;
       }
     }
-    console.log("Info", JSON.stringify(info));
     this.searchService.getEvents(info);
   }
 
-  public onchange(selectedIndex){
+  public onChange(selectedIndex){
     this.selectedIndex = selectedIndex;
   }
 
   public onDateChange(selectedIndex){
     this.selectedDateIndex = selectedIndex;
+  }
+
+  public onSpendingChange(selectedIndex){
+    this.selectedSpendingIndex = selectedIndex;
   }
 
 }

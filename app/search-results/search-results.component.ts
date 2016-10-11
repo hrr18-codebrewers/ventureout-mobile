@@ -14,6 +14,9 @@ export class SearchResultsComponent {
   }
 
   public onItemTap(item) {
+    for(var key in this.matches[item.index]){
+      console.log("MATCHES", key);
+    }
     alert("Find This Event Here: \n" + this.matches[item.index].url);
   }
 }
