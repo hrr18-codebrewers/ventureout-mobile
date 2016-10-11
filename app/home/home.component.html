@@ -6,7 +6,7 @@
     <DropDown #dd class="dropdown" [items]="categories" [selectedIndex]="selectedIndex" (selectedIndexChange)="onchange(dd.selectedIndex)"></DropDown>
     <TextField hint="Start Date: YYYY-MM-DD" [(ngModel)]="start"></TextField>
     <TextField hint="End Date: YYYY-MM-DD" [(ngModel)]="end"></TextField>
-    <TextField hint="Budget" [(ngModel)]="budget"></TextField>
+    <TextField hint="Free or Paid" [(ngModel)]="budget"></TextField>
     <TextField hint="Location: City, State" [(ngModel)]="location"></TextField>
     <Button text="Find Events!" (tap)="onTap()"></Button>
 

@@ -35,7 +35,7 @@ export class HomeComponent {
 
   start: string;
   end: string;
-  budget: number;
+  budget: string;
   location: string;
 
   constructor(private router: Router,
