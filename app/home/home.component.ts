@@ -1,14 +1,26 @@
-import { Component, OnChanges } from "@angular/core";
+import { Component, OnChanges, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import {ObservableArray} from "data/observable-array";
 import { SearchService } from "./search.service";
+import { Page } from "ui/page";
 
 @Component({
     selector: "home-page",
     templateUrl: "./home/home.component.html"
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
+  constructor(private router: Router,
+              private searchService: SearchService,
+              private page: Page) {
+
+  }
+
+  ngOnInit() {
+    this.page.actionBarHidden = true;
+    //this.page.backgroundImage = "~/vo-background3.jpeg";
+  }
 
   selectedIndex: number = 0;
 
@@ -50,10 +62,6 @@ export class HomeComponent {
 
   location: string;
 
-  constructor(private router: Router,
-              private searchService: SearchService) {
-
-  }
 
   public onTap() {
     var info = {
