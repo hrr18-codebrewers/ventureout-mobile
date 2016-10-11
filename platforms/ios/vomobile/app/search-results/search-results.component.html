@@ -5,14 +5,15 @@
   </DockLayout>
 
   <StackLayout>
-    <Label class="noMatches" *ngIf='matches === undefined' text="Sorry! Nothing matched your search."></Label>
+    <Label class="noMatches" *ngIf='matches.length === 0' text="Sorry! Nothing matched your search."></Label>
   </StackLayout>
 
   <ListView [items]="matches" (itemTap)="onItemTap($event)">
     <template let-item="item" let-i="index">
       <StackLayout>
-        <Image src='item.logo.original.url' ></Image>
         <Label class="eventTitle" [text]='item.name.text'></Label>
+        <TextView *ngIf='item.description.text !== null' [text]='item.description.text'></TextView>
+        <TextView *ngIf='item.description.text === null' text="No Description Available"></TextView>
       </StackLayout>
     </template>
   </ListView>

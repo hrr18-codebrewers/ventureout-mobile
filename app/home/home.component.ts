@@ -1,18 +1,35 @@
-import { Component, OnChanges } from "@angular/core";
+import { Component, OnChanges, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import {ObservableArray} from "data/observable-array";
 import { SearchService } from "./search.service";
+import { Page } from "ui/page";
 
 @Component({
     selector: "home-page",
     templateUrl: "./home/home.component.html"
 })
 
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
+  constructor(private router: Router,
+              private searchService: SearchService,
+              private page: Page) {
+
+  }
+
+  ngOnInit() {
+    this.page.actionBarHidden = true;
+    //this.page.backgroundImage = "~/vo-background3.jpeg";
+  }
 
   selectedIndex: number = 0;
 
   selectedDateIndex: number = 0;
+
+  selectedSpendingIndex: number = 0;
+
+  spending = ['Free',
+              'Paid'];
 
   timeframes = ['Today',
                 'Tomorrow',
@@ -20,7 +37,7 @@ export class HomeComponent {
                 'This Weekend',
                 'Next Week',
                 'This Month',
-                'Next Month']
+                'Next Month'];
 
   categories = ['Business & Professional',
                 'Music',
@@ -43,21 +60,14 @@ export class HomeComponent {
                 'Hobbies & Special Interest',
                 'other'];
 
-  start: string;
-  end: string;
-  budget: string;
   location: string;
 
-  constructor(private router: Router,
-              private searchService: SearchService) {
-
-  }
 
   public onTap() {
     var info = {
       interests: this.categories[this.selectedIndex],
       timeframe: this.timeframes[this.selectedDateIndex],
-      budget: this.budget,
+      budget: this.spending[this.selectedSpendingIndex],
       location: this.location
     };
     for(var key in info){
@@ -66,16 +76,19 @@ export class HomeComponent {
         return;
       }
     }
-    console.log("Info", JSON.stringify(info));
     this.searchService.getEvents(info);
   }
 
-  public onchange(selectedIndex){
+  public onChange(selectedIndex){
     this.selectedIndex = selectedIndex;
   }
 
   public onDateChange(selectedIndex){
     this.selectedDateIndex = selectedIndex;
+  }
+
+  public onSpendingChange(selectedIndex){
+    this.selectedSpendingIndex = selectedIndex;
   }
 
 }
