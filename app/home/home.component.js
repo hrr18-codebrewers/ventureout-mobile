@@ -6,17 +6,57 @@ var HomeComponent = (function () {
     function HomeComponent(router, searchService) {
         this.router = router;
         this.searchService = searchService;
+        this.selectedIndex = 0;
+        this.selectedDateIndex = 0;
+        this.timeframes = ['Today',
+            'Tomorrow',
+            'This Week',
+            'This Weekend',
+            'Next Week',
+            'This Month',
+            'Next Month'];
+        this.categories = ['Business & Professional',
+            'Music',
+            'Food & Drink',
+            'Community & Culture',
+            'Performing & Visual Arts',
+            'Film, Media & Entertainment',
+            'Sports & Fitness',
+            'Health & Wellness',
+            'Science & Technology',
+            'Travel & Outdoor',
+            'Charity & Causes',
+            'Religion & Spirituality',
+            'Family & Education',
+            'Seasonal & Holiday',
+            'Government & Politics',
+            'Fashion & Beauty',
+            'Home & Lifestyle',
+            'Auto, Boat & Air',
+            'Hobbies & Special Interest',
+            'other'];
     }
     HomeComponent.prototype.onTap = function () {
         var info = {
-            interests: this.interests,
-            start: this.start,
-            end: this.end,
+            interests: this.categories[this.selectedIndex],
+            timeframe: this.timeframes[this.selectedDateIndex],
             budget: this.budget,
             location: this.location
         };
-        alert("You are searching for " + JSON.stringify(info));
+        for (var key in info) {
+            if (info[key] === undefined) {
+                alert("Please Fill Out All Criteria");
+                return;
+            }
+        }
+        console.log("Info", JSON.stringify(info));
         this.searchService.getEvents(info);
+    };
+    HomeComponent.prototype.onchange = function (selectedIndex) {
+        this.selectedIndex = selectedIndex;
+    };
+    HomeComponent.prototype.onDateChange = function (selectedIndex) {
+        this.selectedDateIndex = selectedIndex;
     };
     HomeComponent = __decorate([
         core_1.Component({

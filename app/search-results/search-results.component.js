@@ -4,9 +4,10 @@ var search_service_1 = require("../home/search.service");
 var SearchResultsComponent = (function () {
     function SearchResultsComponent(searchService) {
         this.searchService = searchService;
+        this.matches = this.searchService.events.events;
     }
-    SearchResultsComponent.prototype.onTap = function () {
-        alert("You tapped that! " + this.searchService.events);
+    SearchResultsComponent.prototype.onItemTap = function (item) {
+        alert("Find This Event Here: \n" + this.matches[item.index].url);
     };
     SearchResultsComponent = __decorate([
         core_1.Component({

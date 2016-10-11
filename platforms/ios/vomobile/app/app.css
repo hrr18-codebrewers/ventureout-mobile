@@ -9,6 +9,26 @@
     horizontal-align: center;
 }
 
+.noMatches {
+  horizontal-align: center;
+}
+
+.eventTitle {
+  background-color: #223947;
+  width: 100%;
+  color: white;
+}
+
+.dropdown {
+  margin: 10;
+  padding: 10;
+  color: blue;
+}
+
+.dropdownLabel {
+  margin: 10;
+}
+
 text-field {
   font-size: 20;
   width: 100%;
@@ -31,4 +51,12 @@ Image {
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 80;
+}
+
+.odd {
+    background-color: white;
+}
+
+.even {
+    background-color: grey;
 }

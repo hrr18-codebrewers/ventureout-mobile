@@ -1,9 +1,21 @@
 <StackLayout>
 
+  <DockLayout>
+    <Button [nsRouterLink]="['/']" routerLinkActive="active" text="Search Again"></Button>
+  </DockLayout>
+
   <StackLayout>
-    <Label text="Your Search Results Here!"></Label>
-    <Button (tap)="onTap()" text="Test"></Button>
+    <Label class="noMatches" *ngIf='matches === undefined' text="Sorry! Nothing matched your search."></Label>
   </StackLayout>
+
+  <ListView [items]="matches" (itemTap)="onItemTap($event)">
+    <template let-item="item" let-i="index">
+      <StackLayout>
+        <Image src='item.logo.original.url' ></Image>
+        <Label class="eventTitle" [text]='item.name.text'></Label>
+      </StackLayout>
+    </template>
+  </ListView>
 
 </StackLayout>
 
