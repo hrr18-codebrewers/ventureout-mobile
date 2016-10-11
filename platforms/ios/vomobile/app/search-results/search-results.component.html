@@ -5,7 +5,7 @@
   </DockLayout>
 
   <StackLayout>
-    <Label class="noMatches" *ngIf='matches.length === 0' text="Sorry! Nothing matched your search."></Label>
+    <Label class="noMatches" *ngIf='matches === undefined' text="Sorry! Nothing matched your search."></Label>
   </StackLayout>
 
   <ListView [items]="matches" (itemTap)="onItemTap($event)">

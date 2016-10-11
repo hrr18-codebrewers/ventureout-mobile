@@ -44,6 +44,9 @@ export class SearchService {
       }
     }
 
+    // Timeframe
+    var timeframe = criteria.timeframe.replace(' ', '_').toLowerCase();
+
     // Price
     var budget = criteria.budget.toLowerCase();
     if(budget !== "free" && budget !== "paid"){
@@ -59,10 +62,7 @@ export class SearchService {
       location = splitLocation.join('');
     }
 
-      var futureDate = new Date(new Date().getTime() + 1 * 24 * 60 * 60 * 1000).toJSON().slice(0,10);
-      var startDate = futureDate + 'T00:00:00Z';
-
-      var url = 'https://www.eventbriteapi.com/v3/events/search/?sort_by=best&categories='+ categoryId +'&price='+ budget +'&location.address='+ location +'&start_date.range_start='+ startDate +'&expand=venue&token=YZO3HZ5MJZYKY6QU64H2';
+      var url = 'https://www.eventbriteapi.com/v3/events/search/?sort_by=best&categories='+ categoryId +'&start_date.keyword='+ timeframe +'&price='+ budget +'&location.address='+ location +'&expand=venue&token=YZO3HZ5MJZYKY6QU64H2';
 
       getJSON(url).then(function(response){
         that.events = undefined;

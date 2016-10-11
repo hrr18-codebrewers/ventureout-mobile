@@ -10,7 +10,17 @@ import { SearchService } from "./search.service";
 
 export class HomeComponent {
 
-  selectedIndex = 0;
+  selectedIndex: number = 0;
+
+  selectedDateIndex: number = 0;
+
+  timeframes = ['Today',
+                'Tomorrow',
+                'This Week',
+                'This Weekend',
+                'Next Week',
+                'This Month',
+                'Next Month']
 
   categories = ['Business & Professional',
                 'Music',
@@ -44,21 +54,23 @@ export class HomeComponent {
   }
 
   public onTap() {
+    console.log("info", this.selectedIndex, this.selectedDateIndex);
     var info = {
       interests: this.categories[this.selectedIndex],
-      start: this.start,
-      end: this.end,
+      timeframe: this.timeframes[this.selectedDateIndex],
       budget: this.budget,
       location: this.location
     };
+    console.log("Info", JSON.stringify(info));
     this.searchService.getEvents(info);
   }
 
   public onchange(selectedIndex){
-    console.log("Before", this.selectedIndex);
     this.selectedIndex = selectedIndex;
-    console.log("Selected", selectedIndex);
-    console.log("After", this.selectedIndex);
+  }
+
+  public onDateChange(selectedIndex){
+    this.selectedDateIndex = selectedIndex;
   }
 
 }

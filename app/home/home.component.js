@@ -7,6 +7,14 @@ var HomeComponent = (function () {
         this.router = router;
         this.searchService = searchService;
         this.selectedIndex = 0;
+        this.selectedDateIndex = 0;
+        this.timeframes = ['Today',
+            'Tomorrow',
+            'This Week',
+            'This Weekend',
+            'Next Week',
+            'This Month',
+            'Next Month'];
         this.categories = ['Business & Professional',
             'Music',
             'Food & Drink',
@@ -29,20 +37,21 @@ var HomeComponent = (function () {
             'other'];
     }
     HomeComponent.prototype.onTap = function () {
+        console.log("info", this.selectedIndex, this.selectedDateIndex);
         var info = {
             interests: this.categories[this.selectedIndex],
-            start: this.start,
-            end: this.end,
+            timeframe: this.timeframes[this.selectedDateIndex],
             budget: this.budget,
             location: this.location
         };
+        console.log("Info", JSON.stringify(info));
         this.searchService.getEvents(info);
     };
     HomeComponent.prototype.onchange = function (selectedIndex) {
-        console.log("Before", this.selectedIndex);
         this.selectedIndex = selectedIndex;
-        console.log("Selected", selectedIndex);
-        console.log("After", this.selectedIndex);
+    };
+    HomeComponent.prototype.onDateChange = function (selectedIndex) {
+        this.selectedDateIndex = selectedIndex;
     };
     HomeComponent = __decorate([
         core_1.Component({
