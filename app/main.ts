@@ -24,6 +24,8 @@ registerElement("DropDown", () => require("nativescript-drop-down/drop-down").Dr
     imports: [NativeScriptModule,
               NativeScriptRouterModule,
               NativeScriptFormsModule,
+
+              // Routes for the router-outlet tag in app.component.html
               NativeScriptRouterModule.forRoot([
                 { path: '', component: HomeComponent},
                 { path: 'search-results', component: SearchResultsComponent}

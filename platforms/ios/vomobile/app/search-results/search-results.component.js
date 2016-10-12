@@ -6,6 +6,7 @@ var SearchResultsComponent = (function () {
         this.searchService = searchService;
         this.matches = this.searchService.events.events;
     }
+    // Provide url so users can learn more about the events and buy tickets
     SearchResultsComponent.prototype.onItemTap = function (item) {
         alert("Find This Event Here: \n" + this.matches[item.index].url);
     };
