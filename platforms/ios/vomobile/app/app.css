@@ -12,9 +12,11 @@
 }
 
 .eventTitle {
-  padding: 7;
+  padding: 3;
+  border-radius: 7;
   background-color: #86888c;
-  width: 100%;
+  padding-left: 15;
+  margin: 5;
 }
 
 .dropdown {
