@@ -13,6 +13,7 @@ export class SearchResultsComponent {
 
   }
 
+  // Provide url so users can learn more about the events and buy tickets
   public onItemTap(item) {
     alert("Find This Event Here: \n" + this.matches[item.index].url);
   }

@@ -18,7 +18,6 @@ export class HomeComponent {
   }
 
   // Indexes and selection lists for dropdown menus
-
   selectedSpendingIndex: number = 0;
   spending = ['Free',
               'Paid'];

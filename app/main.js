@@ -25,6 +25,7 @@ var AppComponentModule = (function () {
             imports: [platform_1.NativeScriptModule,
                 router_1.NativeScriptRouterModule,
                 forms_1.NativeScriptFormsModule,
+                // Routes for the router-outlet tag in app.component.html
                 router_1.NativeScriptRouterModule.forRoot([
                     { path: '', component: home_component_1.HomeComponent },
                     { path: 'search-results', component: search_results_component_1.SearchResultsComponent }
