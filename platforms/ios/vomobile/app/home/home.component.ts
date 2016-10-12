@@ -17,15 +17,13 @@ export class HomeComponent {
 
   }
 
-  selectedIndex: number = 0;
-
-  selectedDateIndex: number = 0;
+  // Indexes and selection lists for dropdown menus
 
   selectedSpendingIndex: number = 0;
-
   spending = ['Free',
               'Paid'];
 
+  selectedTimeframeIndex: number = 0;
   timeframes = ['Today',
                 'Tomorrow',
                 'This Week',
@@ -34,6 +32,7 @@ export class HomeComponent {
                 'This Month',
                 'Next Month'];
 
+  selectedCategoryIndex: number = 0;
   categories = ['Business & Professional',
                 'Music',
                 'Food & Drink',
@@ -55,16 +54,19 @@ export class HomeComponent {
                 'Hobbies & Special Interest',
                 'other'];
 
+  // Two way binding to the text field
   location: string;
 
-
+  // Sends form data to the search service to send the API request for relevant events
   public onTap() {
     var info = {
-      interests: this.categories[this.selectedIndex],
-      timeframe: this.timeframes[this.selectedDateIndex],
+      interests: this.categories[this.selectedCategoryIndex],
+      timeframe: this.timeframes[this.selectedTimeframeIndex],
       budget: this.spending[this.selectedSpendingIndex],
       location: this.location
     };
+
+    // Stop partial requests
     for(var key in info){
       if(info[key] === undefined){
         alert("Please Fill Out All Criteria");
@@ -74,12 +76,13 @@ export class HomeComponent {
     this.searchService.getEvents(info);
   }
 
-  public onChange(selectedIndex){
-    this.selectedIndex = selectedIndex;
+  // Functions to update the selected indexes of the dropdown menus
+  public onCategoryChange(selectedIndex){
+    this.selectedCategoryIndex = selectedIndex;
   }
 
-  public onDateChange(selectedIndex){
-    this.selectedDateIndex = selectedIndex;
+  public onTimeframeChange(selectedIndex){
+    this.selectedTimeframeIndex = selectedIndex;
   }
 
   public onSpendingChange(selectedIndex){

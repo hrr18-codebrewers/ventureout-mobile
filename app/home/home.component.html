@@ -3,9 +3,9 @@
   <StackLayout class="criteria">
 
     <Label class="dropdownLabel" text="What Are You Into?" fontSize="18" verticalAlignment="bottom"></Label>
-    <DropDown #dd class="dropdown" [items]="categories" [selectedIndex]="selectedIndex" (selectedIndexChange)="onChange(dd.selectedIndex)"></DropDown>
+    <DropDown #dd class="dropdown" [items]="categories" [selectedIndex]="selectedCategoryIndex" (selectedIndexChange)="onCategoryChange(dd.selectedIndex)"></DropDown>
     <Label class="dropdownLabel" text="When Do You Want To Go?" fontSize="18" verticalAlignment="bottom"></Label>
-    <DropDown #ddd class="dropdown" [items]="timeframes" [selectedIndex]="selectedDateIndex" (selectedIndexChange)="onDateChange(ddd.selectedIndex)"></DropDown>
+    <DropDown #ddd class="dropdown" [items]="timeframes" [selectedIndex]="selectedTimeframeIndex" (selectedIndexChange)="onTimeframeChange(ddd.selectedIndex)"></DropDown>
     <Label class="dropdownLabel" text="Want To Spend Money?" fontSize="18" verticalAlignment="bottom"></Label>
     <DropDown #dds class="dropdown" [items]="spending" [selectedIndex]="selectedSpendingIndex" (selectedIndexChange)="onSpendingChange(dds.selectedIndex)"></DropDown>
     <Label class="dropdownLabel" text="Where Do You Want To Go?" fontSize="18" verticalAlignment="bottom"></Label>

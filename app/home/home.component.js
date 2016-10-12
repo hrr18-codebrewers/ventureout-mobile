@@ -8,11 +8,11 @@ var HomeComponent = (function () {
         this.router = router;
         this.searchService = searchService;
         this.page = page;
-        this.selectedIndex = 0;
-        this.selectedDateIndex = 0;
+        // Indexes and selection lists for dropdown menus
         this.selectedSpendingIndex = 0;
         this.spending = ['Free',
             'Paid'];
+        this.selectedTimeframeIndex = 0;
         this.timeframes = ['Today',
             'Tomorrow',
             'This Week',
@@ -20,6 +20,7 @@ var HomeComponent = (function () {
             'Next Week',
             'This Month',
             'Next Month'];
+        this.selectedCategoryIndex = 0;
         this.categories = ['Business & Professional',
             'Music',
             'Food & Drink',
@@ -41,13 +42,15 @@ var HomeComponent = (function () {
             'Hobbies & Special Interest',
             'other'];
     }
+    // Sends form data to the search service to send the API request for relevant events
     HomeComponent.prototype.onTap = function () {
         var info = {
-            interests: this.categories[this.selectedIndex],
-            timeframe: this.timeframes[this.selectedDateIndex],
+            interests: this.categories[this.selectedCategoryIndex],
+            timeframe: this.timeframes[this.selectedTimeframeIndex],
             budget: this.spending[this.selectedSpendingIndex],
             location: this.location
         };
+        // Stop partial requests
         for (var key in info) {
             if (info[key] === undefined) {
                 alert("Please Fill Out All Criteria");
@@ -56,11 +59,12 @@ var HomeComponent = (function () {
         }
         this.searchService.getEvents(info);
     };
-    HomeComponent.prototype.onChange = function (selectedIndex) {
-        this.selectedIndex = selectedIndex;
+    // Functions to update the selected indexes of the dropdown menus
+    HomeComponent.prototype.onCategoryChange = function (selectedIndex) {
+        this.selectedCategoryIndex = selectedIndex;
     };
-    HomeComponent.prototype.onDateChange = function (selectedIndex) {
-        this.selectedDateIndex = selectedIndex;
+    HomeComponent.prototype.onTimeframeChange = function (selectedIndex) {
+        this.selectedTimeframeIndex = selectedIndex;
     };
     HomeComponent.prototype.onSpendingChange = function (selectedIndex) {
         this.selectedSpendingIndex = selectedIndex;
