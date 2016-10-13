@@ -5,8 +5,8 @@ import { SearchService } from "./search.service";
 import { Page } from "ui/page";
 
 @Component({
-    selector: "home-page",
-    templateUrl: "./home/home.component.html"
+  selector: "home-page",
+  templateUrl: "./home/home.component.html"
 })
 
 export class HomeComponent {
