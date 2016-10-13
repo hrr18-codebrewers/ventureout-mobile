@@ -1,6 +1,9 @@
 // Import Components for Testing
-var reflect = require("reflect-metadata");
-var Home = require("../home/home.component");
+import { HomeComponent } from '../home/home.component';
+import { SearchService } from '../home/search.service';
+import { SearchResultsComponent } from '../search-results/search-results.component';
+declare var assert: Chai.AssertStatic;
+
 
 
 describe('VO-Mobile', function () {
