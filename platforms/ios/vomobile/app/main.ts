@@ -17,22 +17,22 @@ import { SearchService } from "./home/search.service"
 registerElement("DropDown", () => require("nativescript-drop-down/drop-down").DropDown);
 
 @NgModule({
-    declarations: [AppComponent,
-                   HomeComponent,
-                   SearchResultsComponent],
-    bootstrap: [AppComponent],
-    imports: [NativeScriptModule,
-              NativeScriptRouterModule,
-              NativeScriptFormsModule,
+  declarations: [AppComponent,
+                 HomeComponent,
+                 SearchResultsComponent],
+  bootstrap: [AppComponent],
+  imports: [NativeScriptModule,
+            NativeScriptRouterModule,
+            NativeScriptFormsModule,
 
-              // Routes for the router-outlet tag in app.component.html
-              NativeScriptRouterModule.forRoot([
-                { path: '', component: HomeComponent},
-                { path: 'search-results', component: SearchResultsComponent}
+            // Routes for the router-outlet tag in app.component.html
+            NativeScriptRouterModule.forRoot([
+              { path: '', component: HomeComponent},
+              { path: 'search-results', component: SearchResultsComponent}
 
-              ])],
-    providers: [SearchService,
-                RouterExtensions]
+            ])],
+  providers: [SearchService,
+              RouterExtensions]
 })
 class AppComponentModule {}
 

@@ -1,11 +1,5 @@
-// Import Components for Testing
-import { HomeComponent } from '../home/home.component';
-import { SearchService } from '../home/search.service';
-import { SearchResultsComponent } from '../search-results/search-results.component';
+"use strict";
 // declare var assert: Chai.AssertStatic;
-
-
-
 // describe('VO-Mobile', function () {
 // 	describe('Home', function () {
 // 		it('should return -1 when the value is not present', function () {
@@ -15,12 +9,11 @@ import { SearchResultsComponent } from '../search-results/search-results.compone
 // 	});
 //   describe('SearchService', function () {
 //     it('should return -1 when the value is not present', function () {
-
 //     });
 //   });
 //   describe('SearchResults', function () {
 //     it('should return -1 when the value is not present', function () {
-
 //     });
 //   });
 // });
+//# sourceMappingURL=testing.js.map
